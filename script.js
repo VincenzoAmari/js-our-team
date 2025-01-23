@@ -36,3 +36,10 @@ const teamMembers = [
     img: "img/female3.png",
   },
 ];
+
+const teamContainer = document.querySelector("main .flex");
+
+teamMembers.forEach((member) => {
+  const memberCard = document.createElement("div");
+  memberCard.classList.add("flex");
+});
