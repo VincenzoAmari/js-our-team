@@ -39,20 +39,42 @@ const teamMembers = [
 
 const teamContainer = document.querySelector("main .flex");
 
-teamMembers.forEach((member) => {
-  const memberCard = document.createElement("div");
-  memberCard.classList.add("flex");
+let teamHTML = "";
 
-  memberCard.innerHTML = `
-  <figure>
-    <img src="${member.img}" alt="${member.name}" height="90px" />
-  </figure>
-  <div class="flex flex-column">
-    <h5>${member.name}</h5>
-    <span>${member.email}</span>
-    <span>${member.role}</span>
-  </div>
-`;
+for (let i = 0; i < teamMembers.length; i++) {
+  const member = teamMembers[i];
 
-  teamContainer.appendChild(memberCard);
-});
+  teamHTML += `
+    <div class="flex">
+      <figure>
+        <img src="${member.img}" alt="${member.name}" height="90px" />
+      </figure>
+      <div class="flex flex-column">
+        <h5>${member.name}</h5>
+        <span>${member.email}</span>
+        <span>${member.role}</span>
+      </div>
+    </div>
+  `;
+}
+
+teamContainer.innerHTML = teamHTML;
+
+//VARIANTE CON CREATE ELEMENT
+// teamMembers.forEach((member) => {
+//   const memberCard = document.createElement("div");
+//   memberCard.classList.add("flex");
+
+//   memberCard.innerHTML = `
+//   <figure>
+//     <img src="${member.img}" alt="${member.name}" height="90px" />
+//   </figure>
+//   <div class="flex flex-column">
+//     <h5>${member.name}</h5>
+//     <span>${member.email}</span>
+//     <span>${member.role}</span>
+//   </div>
+// `;
+
+//   teamContainer.appendChild(memberCard);
+// });
